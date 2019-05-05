@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title  >Stocks Watcher inc</title>
+  </head>
+  <body 
+ style = "background-color:rgb(224, 251, 250)"; >
+  <!------------------- INDEX BACKGROUND COLOR ABOVE -->
+  <div>
+      <img   
+      style ="background-position: 50% 50%;
+			top:10%"
+      src="indexLogo.png";>
+
+  </div>
+   
+    <div>
+        <form onsubmit="return false">
+                 <div class="form-group" style="
+                position: fixed;
+                top: 35%;
+                left: 49%;
+                margin-top: -50px;
+                margin-left: -100px;
+                height:92px;
+                width:272px">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" style="width: 250px;" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    
+                    <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" style="width: 250px;" placeholder="Password">
+                    
+                    <div>
+                      
+                            <button style="margin-top:35px;" type="button" onclick="signin()" class="btn btn-primary">Log In</button>
+                            <button style="margin-top:35px; margin-left: 90px" type="button" onclick="signup()" class="btn btn-primary">Sign Up</button>
+                    </div>
+                    
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+  
+  
+  </body>
+<!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-functions.js"></script>
+  <script>
+      
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA6IUpS9JJdaOYarXVmSlQK-Qcv3aDn1J4",
+      authDomain: "shares-watcher.firebaseapp.com",
+      databaseURL: "https://shares-watcher.firebaseio.com",
+      projectId: "shares-watcher",
+      storageBucket: "shares-watcher.appspot.com",
+      messagingSenderId: "141191469503"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  
+<script src="scripts.js"></script>
+</html>
+

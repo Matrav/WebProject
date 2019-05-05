@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="plotly-latest.min.js"></script>
+
+    <title>Stocks Watcher inc</title>
+  </head> <!----------- HOME BACKGROUND COLOR HERE  -------------->
+  <body style = "background-color: rgb(224, 251, 250)"; >
+    <nav class="navbar navbar-light bg-light" style= "background-color:rgb(224, 251, 250)">
+	<img   
+      style ="top:10%"
+      src="homeLogo2.png";>
+        
+        <form class="form-inline">
+          <button class="btn btn-outline-primary mr-5 my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal" >Settings</button>
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal" onclick="logout()">Logout</button>
+        </form>
+      </nav>
+      <div class="container mycontainer">
+
+      </div>
+      <div id="tester" style="width:600px;height:250px;"></div>
+      <script>
+        TESTER = document.getElementById('tester');
+        //Plot function using plotlyjs
+        //this function plots the graph  through the stock information we obtain with stocks.js
+        //id - an elements id
+        function plotter(id,x,y){
+          myelement= document.getElementById(id);
+          Plotly.plot( myelement, [{
+          x: x,
+          y: y }], {
+          margin: { t: 0 } } );
+        }
+      </script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"            aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+              <div id="checkboxcontainer">
+                  <input type="checkbox" name="Blizzard"> Blizzard<br>
+                  <input type="checkbox" name="Apple" > Apple<br>
+                  <input type="checkbox" name="Microsoft" > Microsoft<br>
+                  <input type="checkbox" name="Yahoo" > Yahoo<br>
+                  <input type="checkbox" name="Google" > Google<br>
+                  <input type="checkbox" name="Bitgroup" > Bitgroup<br>
+                  <input type="checkbox" name="Disney" > Disney<br>
+                  <input type="checkbox" name="Netflix" > Netflix<br>
+                  <input type="checkbox" name="Tesla" > Tesla<br>
+                  <input type="checkbox" name="Pixar"> Pixar<br>
+                  <input type="checkbox" name="Shwarma"> Shwarma<br>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="savechanges()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+	<div align="center">
+    &copy; All rights reserved
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+<!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-functions.js"></script>
+  <script>
+      
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA6IUpS9JJdaOYarXVmSlQK-Qcv3aDn1J4",
+      authDomain: "shares-watcher.firebaseapp.com",
+      databaseURL: "https://shares-watcher.firebaseio.com",
+      projectId: "shares-watcher",
+      storageBucket: "shares-watcher.appspot.com",
+      messagingSenderId: "141191469503"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="stocks.js"></script>
+  <script src="homescripts.js"></script>
+</html>
+
